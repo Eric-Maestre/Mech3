@@ -336,6 +336,7 @@
 "Assets/Common_Delivery/CustomDebug.cs"
 "Assets/Common_Delivery/LineC.cs"
 "Assets/Common_Delivery/PlaneC.cs"
+"Assets/Common_Delivery/QuaternionC.cs"
 "Assets/Common_Delivery/SphereC.cs"
 "Assets/Common_Delivery/Vector3C.cs"
 "Assets/Engine/SceneSwitcher.cs"
