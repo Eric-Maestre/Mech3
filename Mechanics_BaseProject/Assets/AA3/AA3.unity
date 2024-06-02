@@ -184,14 +184,30 @@ MonoBehaviour:
         y: 0
         z: 0
       speed: 0.42
+    - amplitude: 1
+      frequency: 0.9
+      phase: 1
+      direction:
+        x: 0.06
+        y: 0
+        z: 0.06
+      speed: 0.42
     - amplitude: 0.68
+      frequency: 0.5
+      phase: 1
+      direction:
+        x: 0.03
+        y: 0
+        z: 0.06
+      speed: -0.42
+    - amplitude: 6.71
       frequency: 0.5
       phase: 1
       direction:
         x: 0
         y: 0
         z: 0.03
-      speed: 0.42
+      speed: -0.42
     buoySettings:
       buoyancyCoefficient: 1
       buoyVelocity: 0
