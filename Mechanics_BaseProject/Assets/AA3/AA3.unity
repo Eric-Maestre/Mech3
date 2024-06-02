@@ -219,7 +219,7 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
-      radius: 1
+      radius: 5
 --- !u!33 &83351505
 MeshFilter:
   m_ObjectHideFlags: 0
