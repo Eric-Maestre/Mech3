@@ -53,22 +53,29 @@ public class AA3_Waves
     float flotabilityForce;
     float netForce;
     float buoyAcceleration;
+    float k;
     public void Update(float dt)
     {
         Random rnd = new Random();
-        for(int i = 0; i < points.Length; i++)
+        elapsedTime += dt;
+        for (int i = 0; i < points.Length; i++)
         {
-            //points[i].position = points[i].originalposition;
-            //points[i].position.y = rnd.Next(100) * 0.01f;
+            
+            points[i].position = points[i].originalposition;
+            points[i].position.y = rnd.Next(100) * 0.01f;
             //k = 2PI/lambda
             //lambda = frecuencia
             //X = Xo + A * k * cos(k*(Xo * W + t)+ Phi) * Wx
-            //Z = Zo + A * k * cos(k*(Zo * W + t)+ Phi) * Wz
-            //Y = A * sen(k*(Yo * W + t)+ Phi)
-            float k = (2 * MathF.PI) / wavesSettings[0].frequency;
+            //Z = Zo + A * k * cos(k*(Xo * W + t)+ Phi) * Wz
+            //Y = A * sen(k*(Xo * W + t)+ Phi)
+            k= (2 * MathF.PI) / wavesSettings[0].frequency;
             points[i].position.x = points[i].originalposition.x + wavesSettings[0].amplitude * k * MathF.Cos(k * (Vector3C.Dot(points[i].originalposition, wavesSettings[0].direction) + elapsedTime) + wavesSettings[0].phase) * wavesSettings[0].direction.x;
             points[i].position.z = points[i].originalposition.z + wavesSettings[0].amplitude * k * MathF.Cos(k * (Vector3C.Dot(points[i].originalposition, wavesSettings[0].direction) + elapsedTime) + wavesSettings[0].phase) * wavesSettings[0].direction.z;
             points[i].position.y = wavesSettings[0].amplitude * MathF.Sin(k * (Vector3C.Dot(points[i].originalposition, wavesSettings[0].direction) + elapsedTime) + wavesSettings[0].phase);
+
+            points[i].position.x += points[i].originalposition.x + wavesSettings[1].amplitude * k * MathF.Cos(k * (Vector3C.Dot(points[i].originalposition, wavesSettings[1].direction) + elapsedTime) + wavesSettings[1].phase) * wavesSettings[1].direction.x;
+            points[i].position.z += points[i].originalposition.z + wavesSettings[1].amplitude * k * MathF.Cos(k * (Vector3C.Dot(points[i].originalposition, wavesSettings[1].direction) + elapsedTime) + wavesSettings[1].phase) * wavesSettings[1].direction.z;
+            points[i].position.y += wavesSettings[1].amplitude * MathF.Sin(k * (Vector3C.Dot(points[i].originalposition, wavesSettings[1].direction) + elapsedTime) + wavesSettings[1].phase);
             if (points[i].position.x == buoy.position.x && points[i].position.z == buoy.position.z)//cambiar condición usando la fórmula de las ondas
             {
                 submergenceDepth = points[i].position.y - (buoy.position.y - buoy.radius);
@@ -79,6 +86,7 @@ public class AA3_Waves
                 buoySettings.buoyVelocity = buoySettings.buoyVelocity + buoyAcceleration * MathF.Pow(elapsedTime, 2);
                 buoy.position.y += buoySettings.buoyVelocity;
             }
+            
         }
     }
     public float GetWaveHeight(float x, float z)

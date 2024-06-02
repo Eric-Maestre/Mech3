@@ -177,12 +177,20 @@ MonoBehaviour:
   waves:
     wavesSettings:
     - amplitude: 0.51
-      frequency: 0.4
+      frequency: 0.9
       phase: 1
       direction:
         x: 0.06
         y: 0
         z: 0
+      speed: 0.42
+    - amplitude: 0.68
+      frequency: 0.5
+      phase: 1
+      direction:
+        x: 0
+        y: 0
+        z: 0.03
       speed: 0.42
     buoySettings:
       buoyancyCoefficient: 1
