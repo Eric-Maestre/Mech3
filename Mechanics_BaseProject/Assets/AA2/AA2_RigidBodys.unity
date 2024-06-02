@@ -240,7 +240,43 @@ MonoBehaviour:
         x: 0
         y: 0
         z: 0
+      vertex1:
+        x: 0
+        y: 0
+        z: 0
+      vertex2:
+        x: 0
+        y: 0
+        z: 0
+      vertex3:
+        x: 0
+        y: 0
+        z: 0
+      vertex4:
+        x: 0
+        y: 0
+        z: 0
+      vertex5:
+        x: 0
+        y: 0
+        z: 0
+      vertex6:
+        x: 0
+        y: 0
+        z: 0
+      vertex7:
+        x: 0
+        y: 0
+        z: 0
+      vertex8:
+        x: 0
+        y: 0
+        z: 0
       lastPosition:
+        x: 0
+        y: 0
+        z: 0
+      lastPosition2:
         x: 0
         y: 0
         z: 0
@@ -251,6 +287,10 @@ MonoBehaviour:
       euler:
         x: 0
         y: 0
+        z: 0
+      aVelocity:
+        x: 500
+        y: 500
         z: 0
       density: 100
 --- !u!1 &498822787
