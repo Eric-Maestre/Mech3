@@ -109,11 +109,19 @@ public class AA3_Waves
             buoyAcceleration = netForce / buoySettings.mass;
             //V = Vo + a*t
             buoySettings.buoyVelocity = buoySettings.buoyVelocity + buoyAcceleration * dt;
-            //Update position with velocity depending on the time
-            //buoy.position.y += buoySettings.buoyVelocity * dt;
-            buoy.position.y = waveHeight;
 
-            //UnityEngine.Debug.Log(waveHeight);
+            //Update position with velocity depending on the time
+            buoy.position.y += buoySettings.buoyVelocity * dt;
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///Bueno, de los comentarios y código anterior, ya que estás, dime si falta algo muy evidente, porfa.
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //Todos los comentarios de abajo a partir de aquí los borraré evidentemente
+            //Esto de aquí era para comprobar si se calculaba bien la altura de la ola, y parece que no.
+            //buoy.position.y = waveHeight;
+            //Si hago "UnityEngine.Debug.Log(waveHeight);", lo que se imprime como altura máxima coincide
+            //con la altura máxima que alcanza la boya si uso "buoy.position.y = waveHeight;", entonces el problema está en la función
+
         }
     }
 
@@ -121,6 +129,13 @@ public class AA3_Waves
     {
         float height = 0.0f;
         float k;
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///Esto era un intento de hacer lo mismo que hemos hecho con las otras olas para calcularlas para ver si era esto,
+        ///pero no cambia nada, sólo que la altura es aún mayor (aunque no se "rompe" nada de código nin unity).
+        ///No sé si es porque no está bien o porque éste es el bueno, ya que suma todas las olas y el otro sólo cuenta la última
+        ///que entre en el "foreach".
+        ///En cualquier caso, algo falla. Si se te ocurre algo super rápido en 5 minutos o menos lo agradezco, si no,
+        ///tampoco te entretengas, creo que esto que hay será suficiente.
         //k = (float)(2.0f * MathF.PI / wavesSettings[0].frequency);
         //height = (float)(wavesSettings[0].amplitude * k * MathF.Sin(Vector3C.Dot(buoy.position, wavesSettings[0].direction) + elapsedTime) + wavesSettings[0].phase);
         //for (int i = 1; i < wavesSettings.Length; i++)
