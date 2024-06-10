@@ -200,7 +200,7 @@ MonoBehaviour:
         y: 0
         z: 0.06
       speed: -0.42
-    - amplitude: 6.71
+    - amplitude: 0.71
       frequency: 0.5
       phase: 1
       direction:
@@ -209,16 +209,16 @@ MonoBehaviour:
         z: 0.03
       speed: -0.42
     buoySettings:
-      buoyancyCoefficient: 1
+      buoyancyCoefficient: 0.5
       buoyVelocity: 0
       mass: 1
       waterDensity: 1000
       gravity: 9.80655
     buoy:
       position:
-        x: 0
-        y: 0
-        z: 0
+        x: 1
+        y: 1
+        z: 1
       radius: 5
 --- !u!33 &83351505
 MeshFilter:
